@@ -1,8 +1,6 @@
 package com.cafe.cafeserver.controllers;
 
-import com.cafe.cafeserver.models.Cliente;
 import com.cafe.cafeserver.models.Pedido;
-import com.cafe.cafeserver.repositories.ClienteRepository;
 import com.cafe.cafeserver.repositories.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

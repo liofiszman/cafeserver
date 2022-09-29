@@ -13,7 +13,16 @@ public class Producto {
     @Column(name = "Nombre", nullable = false)
     private String nombre;
 
+    @Column(name = "precio")
+    private Float precio;
 
+    public Float getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Float precio) {
+        this.precio = precio;
+    }
 
     public Integer getId() {
         return id;
@@ -30,5 +39,6 @@ public class Producto {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
 
 }

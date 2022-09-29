@@ -1,12 +1,13 @@
 package com.cafe.cafeserver.controllers;
 
-import com.cafe.cafeserver.models.Cliente;
 import com.cafe.cafeserver.models.Producto;
-import com.cafe.cafeserver.repositories.ClienteRepository;
 import com.cafe.cafeserver.repositories.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Optional;

@@ -73,4 +73,14 @@ public class Cliente {
         this.telefono = telefono;
     }
 
+    @Column(name = "direccion")
+    private String direccion;
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
 }

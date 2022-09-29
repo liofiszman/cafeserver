@@ -1,6 +1,5 @@
 package com.cafe.cafeserver.repositories;
 
-import com.cafe.cafeserver.models.Cliente;
 import com.cafe.cafeserver.models.Pedido;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
