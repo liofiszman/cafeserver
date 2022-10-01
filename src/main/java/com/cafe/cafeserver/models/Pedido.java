@@ -1,9 +1,9 @@
 package com.cafe.cafeserver.models;
 
+import org.hibernate.Hibernate;
+
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Entity
 @Table(name = "pedido")
@@ -47,8 +47,6 @@ public class Pedido {
     @Column(name = "entregado", nullable = false)
     private boolean entregado;
 
-    @OneToMany(mappedBy = "pedido", orphanRemoval = true)
-    private List<PedidoProductos> pedidoProductos = new ArrayList<>();
 
     public boolean getEntregado() {
         return entregado;
@@ -58,11 +56,30 @@ public class Pedido {
         this.entregado = entregado;
     }
 
-    public List<PedidoProductos> getPedidoProductos() {
-        return pedidoProductos;
+    @OneToMany(orphanRemoval = true)
+    @JoinColumn
+    private Set<PedidoProductos> pedidoProductoses = new LinkedHashSet<>();
+
+    public Set<PedidoProductos> getPedidoProductoses() {
+        return pedidoProductoses;
     }
 
-    public void setPedidoProductos(List<PedidoProductos> pedidoProductos) {
-        this.pedidoProductos = pedidoProductos;
+    public void setPedidoProductoses(Set<PedidoProductos> pedidoProductoses) {
+        this.pedidoProductoses = pedidoProductoses;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Pedido pedido = (Pedido) o;
+        return id != null && Objects.equals(id, pedido.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
+
+
 }

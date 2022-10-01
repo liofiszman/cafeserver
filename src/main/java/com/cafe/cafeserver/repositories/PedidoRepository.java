@@ -13,4 +13,5 @@ public interface PedidoRepository extends JpaRepository<Pedido, Integer>, JpaSpe
     @Query("SELECT p FROM Pedido p WHERE p.cliente.apellido LIKE CONCAT (:apellido,'%')")
     List<Pedido> findByApellido(@Param("apellido") String apellido);
 
+
 }
